@@ -6,8 +6,20 @@
 #include "func.h"
 
 int main()
-{   
-    int x=0,y=0,a=0,b=0;
-    std::cin>>a>>b;
-    std::cout<<gcdExtended(a,b,&x,&y)<<" "<<x<<" "<<y;
+{   int no_s=0;
+ std::string in="";
+std::cin>>no_s;
+
+while(no_s!=0){
+in.clear();
+std::cin.ignore();
+std::getline(std::cin,in);
+int flag = pangramCheck(in);
+flag == 1 ? std::cout<<"1":std::cout<<"0";
+std::cout<<std::endl;
+--no_s;
+}
+
+
+
 }

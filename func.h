@@ -21,3 +21,4 @@ int Alpha_num_sum(std::string);
 int *create_init_array(int &);
 void dsum_possible(int *&array, int &, int &);
 int gcdExtended(int a, int b, int *x, int *y);
+int pangramCheck(std::string&);

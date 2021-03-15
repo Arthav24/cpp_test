@@ -203,3 +203,46 @@ int gcdExtended(int a, int b, int *x, int *y)
  
     return gcd; 
 }
+
+int pangramCheck(std::string &in){
+    int alpha[26];
+    for (int i = 0; i < 27; i++)
+    {
+        alpha[i] = 0;
+    }
+    int s_in = in.length();
+    for (int i = 0; i < s_in; i++)
+    {
+        char c = in[i];
+        if (c == ',' || c == ' ')
+            continue;
+        if (c >= 'A' && c <= 'Z')
+        {
+
+            alpha[c - 'A'] = 1;
+        }
+
+        if (c >= 'a' && c <= 'z')
+        {
+            alpha[c - 'a'] = 1;
+        }
+    }
+    int flag = 1;
+    for (int i = 0; i < 26; i++)
+    {
+        if (alpha[i] != 1)
+        {
+            flag = 0;
+            break;
+        }
+        else
+            flag = 1;
+    }
+    try{
+        return flag;
+    }
+    catch(const std::exception &e){
+        std::cout<<e.what();
+    }
+    
+}
