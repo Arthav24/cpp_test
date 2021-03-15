@@ -204,7 +204,7 @@ int gcdExtended(int a, int b, int *x, int *y)
     return gcd; 
 }
 
-int pangramCheck(std::string &in){
+void pangramCheck(std::string &in){
     int alpha[26];
     for (int i = 0; i < 27; i++)
     {
@@ -239,7 +239,7 @@ int pangramCheck(std::string &in){
             flag = 1;
     }
     try{
-        return flag;
+        flag == 1 ? std::cout<<"1":std::cout<<"0";
     }
     catch(const std::exception &e){
         std::cout<<e.what();
