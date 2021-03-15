@@ -6,11 +6,8 @@
 #include "func.h"
 
 int main()
-{
-    int size = 0, dsum = 0;
-    std::cin >> size >> dsum;
-    int *array = create_init_array(size);
-    std::sort(array, array + (size));
-    dsum_possible(array, size, dsum);
-    delete[] array;
+{   
+    int x=0,y=0,a=0,b=0;
+    std::cin>>a>>b;
+    std::cout<<gcdExtended(a,b,&x,&y)<<" "<<x<<" "<<y;
 }
