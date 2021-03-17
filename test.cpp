@@ -18,7 +18,7 @@ int main()
         std::cout<<"INVALID array size";
         return -1;
     }
-    print_array(array,size_array);
+    print_array(array,);
     
 
 
