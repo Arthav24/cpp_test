@@ -1,5 +1,5 @@
 #pragma once
-
+using String = std::string;
 const unsigned int OneAsInt = 0x3F800000;
 const float ScaleUp = float(0x00800000);
 const float ScaleDown = 1.0f / ScaleUp;
@@ -17,8 +17,9 @@ void printa2d(int **&a2d, int, int);
 void swapfirst_last_col(int **&a2d, int, int);
 void deletea2d(int **&a2d, int &);
 float Q_rsqrt(float);
-int Alpha_num_sum(std::string);
+int Alpha_num_sum(String);
 int *create_init_array(int &);
+void print_array(int* &array,int& size);
 void dsum_possible(int *&array, int &, int &);
 int gcdExtended(int a, int b, int *x, int *y);
-void pangramCheck(std::string&);
+void pangramCheck(String&);

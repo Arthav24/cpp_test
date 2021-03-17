@@ -5,6 +5,9 @@
 #include <cmath>
 #include "func.h"
 
+// using String = std::string;
+
+
 float SqrtNewRap_fp(float x)
 {
     float y = Sqrt_fp(x);
@@ -65,7 +68,7 @@ int **create_init_a2d(int r, int c)
     for (int i = 0; i < r; i++)
         a2d[i] = new int[c];
 
-    std::string in;
+    String in;
     int s;
     int k = 0;
     std::cin.ignore();
@@ -106,7 +109,7 @@ void swapfirst_last_col(int **&a2d, int r, int c)
     }
 }
 
-int Alpha_num_sum(std::string in_)
+int Alpha_num_sum(String in_)
 {
     int s_len = in_.length();
     if (s_len == 0)
@@ -142,10 +145,10 @@ float Q_rsqrt(float num)
 int *create_init_array(int &size)
 {
     int *array = new int[size];
-    std::cin.ignore();
-    std::string in;
+    // std::cin.ignore();
+    String in;
     std::getline(std::cin, in);
-    int k = in.length() - 1, count = 0, no = 0;
+    int k = in.length()-1, count = 0, no = 0;
     for (int i = size - 1; i >= 0; i--)
     {
         for (; in[k] != ' ' && k >= 0;)
@@ -161,6 +164,16 @@ int *create_init_array(int &size)
     }
     return array;
 }
+void print_array(int* &array,int& size){
+ std::cout<<std::endl;
+for(int i=0;i<size;i++){
+    std::cout<<array[i]<<" ";
+
+    }
+    std::cout<<std::endl;
+
+}
+
 void dsum_possible(int *&array, int &size, int &dsum)
 {
 
@@ -204,7 +217,7 @@ int gcdExtended(int a, int b, int *x, int *y)
     return gcd; 
 }
 
-void pangramCheck(std::string &in){
+void pangramCheck(String &in){
     int alpha[26];
     for (int i = 0; i < 27; i++)
     {

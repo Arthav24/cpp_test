@@ -3,21 +3,24 @@
 #include <string>
 #include <cstring>
 #include <algorithm>
+
 #include "func.h"
 
 int main()
 {
-    int no_s = 0;
-    std::string in = "";
-    std::cin >> no_s;
-
-    while (no_s != 0)
-    {
-        in.clear();
-        std::cin.ignore();
-        std::getline(std::cin, in);
-        pangramCheck(in);
-        std::cout << std::endl;
-        --no_s;
+    int size_array=0;
+    std::cin>>size_array;
+    std::cin.ignore();
+    int* array=nullptr;
+    if(size_array>0)
+        array = create_init_array(size_array);
+    else{
+        std::cout<<"INVALID array size";
+        return -1;
     }
-}
+    print_array(array,size_array);
+    
+
+
+
+}   
