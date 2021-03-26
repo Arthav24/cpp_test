@@ -8,60 +8,60 @@
 // using String = std::string;
 
 
-float SqrtNewRap_fp(float x)
+float functions::SqrtNewRap_fp(float x)
 {
     float y = Sqrt_fp(x);
     return (y * y + x) / (2 * y);
 }
 
-float Sqrt_fp(float x)
+float functions::Sqrt_fp(float x)
 {
     if (x < 0)
         return -1;
     return AsFloat((AsInt(x) >> 1) + (OneAsInt >> 1));
 }
 
-float Pow_fp(float x, float p)
+float functions::Pow_fp(float x, float p)
 {
     return AsFloat(int(p * ((AsInt(x) - OneAsInt) * ScaleDown) * ScaleUp) + OneAsInt);
 }
 
-float Exp2_fp(float x)
+float functions::Exp2_fp(float x)
 {
     return AsFloat(int(x * ScaleUp) + OneAsInt);
 }
 
-float Log2_fp(float x)
+float functions::Log2_fp(float x)
 {
     if (x < 0)
         return -1;
     else
-        return float(AsInt(x) - OneAsInt) * ScaleUp;
+        return float(functions::AsInt(x) - OneAsInt) * ScaleUp;
 }
 
-inline unsigned int AsInt(float f)
+inline unsigned int functions::AsInt(float f)
 {
     return *(unsigned int *)&f;
 }
 
-inline float AsFloat(unsigned int i)
+inline float functions::AsFloat(unsigned int i)
 {
     return *(float *)&i;
 }
 
-float NegateFloat(float f)
+float functions::NegateFloat(float f)
 {
-    return AsFloat(AsInt(f) ^ 0x80000000);
+    return AsFloat(functions::AsInt(f) ^ 0x80000000);
 }
 
-void deletea2d(int **&a2d, int &r)
+void functions::deletea2d(int **&a2d, int &r)
 {
     for (int i = 0; i < r; i++)
         delete[] a2d[i];
     delete[] a2d;
 }
 
-int **create_init_a2d(int r, int c)
+int** functions::create_init_a2d(int r, int c)
 {
     int **a2d = new int *[r];
 
@@ -86,7 +86,7 @@ int **create_init_a2d(int r, int c)
     return a2d;
 }
 
-void printa2d(int **&a2d, int r, int c)
+void functions::printa2d(int **&a2d, int r, int c)
 {
 
     for (int i = 0; i < r; i++)
@@ -99,7 +99,7 @@ void printa2d(int **&a2d, int r, int c)
     }
 }
 
-void swapfirst_last_col(int **&a2d, int r, int c)
+void functions::swapfirst_last_col(int **&a2d, int r, int c)
 {
     for (int i = 0; i < r; i++)
     {
@@ -109,7 +109,7 @@ void swapfirst_last_col(int **&a2d, int r, int c)
     }
 }
 
-int Alpha_num_sum(String in_)
+int functions::Alpha_num_sum(String in_)
 {
     int s_len = in_.length();
     if (s_len == 0)
@@ -127,7 +127,7 @@ int Alpha_num_sum(String in_)
     }
 }
 //Quake 3 fast inverse root
-float Q_rsqrt(float num)
+float functions::Q_rsqrt(float num)
 {
     long i;
     float x2, y;
@@ -142,7 +142,7 @@ float Q_rsqrt(float num)
     return y;
 }
 
-int *create_init_array(int &size)
+int* functions::create_init_array(int &size)
 {
     int *array = new int[size];
     // std::cin.ignore();
@@ -164,7 +164,7 @@ int *create_init_array(int &size)
     }
     return array;
 }
-void print_array(int* &array,int& size){
+void functions::print_array(int* &array,int& size){
  std::cout<<std::endl;
 for(int i=0;i<size;i++){
     std::cout<<array[i]<<" ";
@@ -174,7 +174,7 @@ for(int i=0;i<size;i++){
 
 }
 
-void dsum_possible(int *&array, int &size, int &dsum)
+void functions::dsum_possible(int *&array, int &size, int &dsum)
 {
 
     int *array_front = array;
@@ -196,7 +196,7 @@ void dsum_possible(int *&array, int &size, int &dsum)
     std::cout << *array_front << std::endl;
     std::cout << *array_back << std::endl;
 }
-int gcdExtended(int a, int b, int *x, int *y) 
+int functions::gcdExtended(int a, int b, int *x, int *y) 
 { 
     // Base Case 
     if (a == 0) 
@@ -217,7 +217,7 @@ int gcdExtended(int a, int b, int *x, int *y)
     return gcd; 
 }
 
-void pangramCheck(String &in){
+void functions::pangramCheck(String &in){
     int alpha[26];
     for (int i = 0; i < 27; i++)
     {
